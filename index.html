@@ -5,33 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meri Kahani</title>
 <style>
-  /* ===== PREMIUM DARK NEON THEME — DESKTOP + MOBILE ===== */
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    /* Refined deep-space palette */
     --bg:        #06080f;
     --bg2:       #0b0f1c;
     --bg3:       #10162a;
     --text:      #f0f4ff;
     --text-soft: #c2cbe8;
     --muted:     #7e8aae;
-
-    /* Neon trio — cooler, more premium */
     --neon:        #5ce1ff;
     --neon-bright: #a6f0ff;
     --neon2:       #b48cff;
     --neon3:       #ff7ad9;
     --gold:        #ffd98a;
-
-    /* Lines & glass */
     --line:        rgba(92,225,255,0.20);
     --line-soft:   rgba(92,225,255,0.09);
-    --glass:       rgba(12,16,30,0.60);
     --glass-border:rgba(92,225,255,0.18);
-    --card-bg:     rgba(16,22,42,0.45);
-
-    /* Sizing */
     --nav-h: 72px;
     --radius: 18px;
     --radius-sm: 12px;
@@ -52,7 +42,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ===== Animated Aurora Background ===== */
   body::before {
     content: '';
     position: fixed;
@@ -228,8 +217,7 @@
     transition: color 0.3s ease, background 0.3s ease, text-shadow 0.3s ease;
   }
   .nav ul a:hover,
-  .nav ul button:hover,
-  .nav ul button.active {
+  .nav ul button:hover {
     color: var(--neon);
     text-shadow: 0 0 12px var(--neon);
     background: rgba(92,225,255,0.07);
@@ -294,13 +282,11 @@
     text-transform: none;
     letter-spacing: 0.02em;
     font-size: 0.92rem;
-    position: relative;
   }
   .chapter-menu a:hover {
     background: linear-gradient(90deg, rgba(92,225,255,0.13), rgba(180,140,255,0.09));
     color: #fff;
     padding-left: 1.1rem;
-    text-shadow: 0 0 12px rgba(92,225,255,0.5);
   }
   .chapter-menu a .num {
     font-size: 0.72rem;
@@ -320,6 +306,10 @@
   .chapter-menu a.gallery-link .num {
     color: var(--neon3);
     text-shadow: 0 0 10px var(--neon3);
+  }
+  .chapter-menu a.dedication-link .num {
+    color: var(--gold);
+    text-shadow: 0 0 10px var(--gold);
   }
 
   /* ===== HERO ===== */
@@ -514,7 +504,6 @@
     font-weight: 400;
     color: #fff;
     margin-bottom: 0.5rem;
-    letter-spacing: 0.02em;
     text-shadow: 0 0 18px rgba(92,225,255,0.5);
   }
   .about-text .role {
@@ -548,10 +537,8 @@
     text-decoration: none;
     font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.05em;
     transition: all 0.35s ease;
     background: rgba(92,225,255,0.05);
-    backdrop-filter: blur(10px);
   }
   .socials a:hover {
     border-color: var(--neon);
@@ -589,7 +576,6 @@
     border: 1px solid var(--line);
     border-radius: 30px;
     background: rgba(92,225,255,0.05);
-    backdrop-filter: blur(10px);
   }
   .chapter h2 {
     font-size: clamp(1.9rem, 6.5vw, 3rem);
@@ -597,7 +583,6 @@
     color: #fff;
     line-height: 1.15;
     margin-bottom: 0.7rem;
-    letter-spacing: 0.02em;
     text-shadow:
       0 0 22px rgba(92,225,255,0.5),
       0 0 50px rgba(92,225,255,0.25);
@@ -607,7 +592,6 @@
     color: var(--muted);
     font-style: italic;
     margin-bottom: 2rem;
-    letter-spacing: 0.05em;
   }
   .chapter::after {
     content: '';
@@ -646,7 +630,6 @@
     margin: 2.4rem 0;
     line-height: 1.5;
     text-align: center;
-    letter-spacing: 0.02em;
     text-shadow: 0 0 20px rgba(92,225,255,0.4);
   }
   .story p.whisper {
@@ -690,7 +673,6 @@
     color: var(--muted);
     text-align: center;
     font-style: italic;
-    letter-spacing: 0.03em;
   }
 
   /* ===== Quote ===== */
@@ -729,6 +711,145 @@
       0 0 45px var(--neon2);
   }
 
+  /* ===== DEDICATION ===== */
+  .dedication {
+    padding: 8rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+    scroll-margin-top: var(--nav-h);
+  }
+  .dedication-inner {
+    position: relative;
+    padding: 3.5rem 2rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(92,225,255,0.04), rgba(180,140,255,0.04));
+    border: 1px solid var(--line-soft);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow:
+      0 25px 70px rgba(0,0,0,0.4),
+      0 0 120px rgba(180,140,255,0.10) inset;
+  }
+  .dedication-label {
+    display: block;
+    text-align: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.55em;
+    color: var(--neon3);
+    text-transform: uppercase;
+    margin: 0 auto 3rem;
+    padding: 0.35rem 1.2rem;
+    border: 1px solid rgba(255,122,217,0.3);
+    border-radius: 30px;
+    background: rgba(255,122,217,0.05);
+    text-shadow: 0 0 14px var(--neon3);
+    width: fit-content;
+  }
+  .sher {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .sher-line {
+    font-family: 'Georgia', serif;
+    font-size: clamp(1.15rem, 4vw, 1.6rem);
+    line-height: 1.75;
+    color: var(--text);
+    font-style: italic;
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 20px rgba(92,225,255,0.15);
+  }
+  .sher-meaning {
+    font-family: 'Georgia', serif;
+    font-size: clamp(0.82rem, 2.5vw, 0.95rem);
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: 0.02em;
+    opacity: 0.85;
+    padding-top: 0.6rem;
+  }
+  .sher-meaning::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+    margin: 0 auto 0.7rem;
+  }
+  .dedication-divider {
+    text-align: center;
+    color: var(--neon);
+    font-size: 1.1rem;
+    letter-spacing: 1em;
+    margin: 2rem 0 2.5rem;
+    opacity: 0.55;
+    text-shadow: 0 0 14px var(--neon);
+  }
+  .sher-highlight {
+    font-size: clamp(1.3rem, 4.8vw, 1.9rem) !important;
+    color: #fff !important;
+    text-shadow:
+      0 0 25px rgba(92,225,255,0.6),
+      0 0 50px rgba(180,140,255,0.4) !important;
+  }
+  .sher-highlight span {
+    display: inline-block;
+    margin-left: 0.3rem;
+    filter: drop-shadow(0 0 10px rgba(255,122,217,0.6));
+    animation: gentlePulse 3s ease-in-out infinite;
+  }
+  .sher-last {
+    font-size: clamp(1.2rem, 4.5vw, 1.75rem) !important;
+    color: var(--neon-bright) !important;
+    text-shadow:
+      0 0 20px var(--neon),
+      0 0 50px var(--neon2) !important;
+  }
+  .sher-last span {
+    display: inline-block;
+    margin-left: 0.3rem;
+    animation: gentlePulse 3s ease-in-out infinite;
+  }
+  .sher-ending {
+    font-size: clamp(1.3rem, 4.8vw, 1.85rem) !important;
+    color: #fff !important;
+    font-weight: 400;
+    line-height: 1.65;
+    text-shadow:
+      0 0 25px rgba(92,225,255,0.55),
+      0 0 55px rgba(180,140,255,0.35) !important;
+    letter-spacing: 0.01em;
+  }
+  .dedication-signature {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+  .signature-line {
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon), transparent);
+    margin: 0 auto 1.3rem;
+    box-shadow: 0 0 10px var(--neon);
+  }
+  .dedication-signature p {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 3vw, 1.15rem);
+    color: var(--neon-bright);
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 14px var(--neon);
+  }
+  @keyframes gentlePulse {
+    0%, 100% { transform: scale(1);    opacity: 0.9; }
+    50%      { transform: scale(1.12); opacity: 1;   }
+  }
+
   /* ===== Gallery ===== */
   .gallery {
     max-width: 1200px;
@@ -744,7 +865,6 @@
     font-weight: 400;
     margin-bottom: 3.5rem;
     color: #fff;
-    letter-spacing: 0.03em;
     text-shadow: 0 0 25px rgba(92,225,255,0.5);
   }
   .photo-grid {
@@ -802,7 +922,6 @@
     font-weight: 400;
     color: #fff;
     margin-bottom: 1rem;
-    letter-spacing: 0.02em;
     text-shadow: 0 0 25px rgba(92,225,255,0.5);
   }
   .contact p { color: var(--muted); margin-bottom: 2.2rem; }
@@ -817,7 +936,6 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     background: rgba(92,225,255,0.06);
-    backdrop-filter: blur(10px);
     transition: all 0.4s ease;
     box-shadow: 0 0 25px rgba(92,225,255,0.3);
     font-family: inherit;
@@ -906,7 +1024,6 @@
     transition: all 0.5s ease;
     pointer-events: none;
     white-space: nowrap;
-    box-shadow: 0 0 25px rgba(92,225,255,0.25);
   }
   #nowPlaying.show { opacity: 1; transform: translateX(0); }
 
@@ -922,7 +1039,7 @@
   }
   .chapter-flash.active { opacity: 1; }
 
-  /* ===== Side Dot Navigation ===== */
+  /* ===== Side Dots ===== */
   .side-dots {
     position: fixed;
     right: 1.8rem;
@@ -938,7 +1055,6 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--line-soft);
-    transition: opacity 0.4s ease;
     max-height: 80vh;
     overflow-y: auto;
     scrollbar-width: none;
@@ -985,7 +1101,7 @@
     transform: translateY(-50%) translateX(0);
   }
 
-  /* ===== RESPONSIVE — TABLET & MOBILE ===== */
+  /* ===== RESPONSIVE ===== */
   @media (max-width: 900px) {
     .side-dots { display: none; }
   }
@@ -995,7 +1111,6 @@
     :root { --nav-h: 62px; }
 
     .nav { padding: 0 1rem; height: var(--nav-h); }
-    .nav.scrolled { height: var(--nav-h); }
     .nav .logo { font-size: 0.86rem; letter-spacing: 0.12em; }
 
     .nav ul { gap: 0; }
@@ -1044,6 +1159,17 @@
     .socials { justify-content: center; }
     .contact { padding: 3rem 1.2rem 4rem; }
 
+    .dedication { padding: 5rem 1rem; }
+    .dedication-inner { padding: 2.5rem 1.2rem; }
+    .sher-line { font-size: 1.1rem; line-height: 1.7; }
+    .sher-meaning { font-size: 0.82rem; }
+    .dedication-divider { margin: 1.6rem 0 2rem; font-size: 1rem; }
+    .sher-highlight { font-size: 1.25rem !important; }
+    .sher-last { font-size: 1.15rem !important; }
+    .sher-ending { font-size: 1.2rem !important; }
+    .dedication-label { font-size: 0.68rem; letter-spacing: 0.4em; margin-bottom: 2.2rem; }
+    .dedication-signature p { font-size: 0.95rem; }
+
     #musicBtn {
       width: 46px; height: 46px;
       bottom: 1rem; right: 1rem;
@@ -1086,14 +1212,16 @@
 
   <!-- ===== Side Dot Navigation ===== -->
   <nav class="side-dots" id="sideDots">
-    <a href="#about"    data-label="About"></a>
-    <a href="#ch1"      data-label="Shuruaat"></a>
-    <a href="#ch2"      data-label="Safar"></a>
-    <a href="#ch3"      data-label="Tootna"></a>
-    <a href="#ch4"      data-label="Uthna"></a>
-    <a href="#ch5"      data-label="Aaj"></a>
-    <a href="#gallery"  data-label="Yaadein"></a>
-    <a href="#contact"  data-label="Contact"></a>
+    <a href="#about"      data-label="About"></a>
+    <a href="#ch1"        data-label="Shuruaat"></a>
+    <a href="#ch2"        data-label="Safar"></a>
+    <a href="#ch3"        data-label="Tootna"></a>
+    <a href="#confusion"  data-label="Confusion"></a>
+    <a href="#ch4"        data-label="Uthna"></a>
+    <a href="#ch5"        data-label="Aaj"></a>
+    <a href="#dedication" data-label="Kuch Khaas"></a>
+    <a href="#gallery"    data-label="Yaadein"></a>
+    <a href="#contact"    data-label="Contact"></a>
   </nav>
 
   <!-- ===== Main Nav ===== -->
@@ -1110,9 +1238,11 @@
           <a href="#ch1"><span class="num">01</span> Shuruaat</a>
           <a href="#ch2"><span class="num">02</span> Safar</a>
           <a href="#ch3"><span class="num">03</span> Tootna</a>
-          <a href="#ch4"><span class="num">04</span> Uthna</a>
-          <a href="#ch5"><span class="num">05</span> Aaj</a>
+          <a href="#confusion"><span class="num">04</span> Confusion</a>
+          <a href="#ch4"><span class="num">05</span> Uthna</a>
+          <a href="#ch5"><span class="num">06</span> Aaj</a>
           <div class="menu-divider"></div>
+          <a href="#dedication" class="dedication-link"><span class="num">♥</span> Kuch Khaas</a>
           <a href="#gallery" class="gallery-link"><span class="num">★</span> Yaadein Gallery</a>
         </div>
       </li>
@@ -1139,9 +1269,8 @@
       <div class="about-text">
         <h3>Umar Faruq</h3>
         <div class="role">aka SUPARI KILLER · Coder · Hacker</div>
-        <p>Kuch log mujhe Umar kehte hain. Kuch Supari Killer.</p>
-        <p>Andar se ek coder. Bahar se ek hacker. Dil se ek aam sa insaan — jo bas apni pehchan banana chahta tha.</p>
-        <p>Par kismat ko kuch aur hi manzoor tha. Aur kahani abhi khatam nahi hui.</p>
+        <p>Ghar walon ke liye Umar. Doston ke liye Supari Killer. Apne aap ke liye — ek aisa banda jo abhi bhi khud ko dhoondh raha hai.</p>
+        <p>Code likhta hoon, bugs todta hoon, aur raat ko chhat pe baith ke chai peeta hoon. Bas.</p>
         <div class="socials">
           <a href="https://www.instagram.com/u_09_f/" title="Instagram" target="_blank">IG</a>
           <a href="https://discord.com/users/u_09_f" title="Discord" target="_blank">DC</a>
@@ -1160,8 +1289,8 @@
   </section>
 
   <section class="container story" id="story">
-    <p class="reveal">Yeh kahani kisi kitaab ki tarah nahi hai. Na iska koi hero hai, na koi villain. Bas ek aam sa insaan — jo apni zindagi jee raha hai, jaise tum, jaise main.</p>
-    <p class="reveal">Kabhi lagta hai sab kuch bekaar hai. Kabhi lagta hai <em>sab kuch theek ho jayega</em>. Dono sach hain. Dono ek saath chalte hain.</p>
+    <p class="reveal">Yeh kahani kisi film jaisi nahi hai. Na hero hai, na villain. Bas ek aam banda — jo apni zindagi jee raha hai, jaise tum, jaise main.</p>
+    <p class="reveal">Kabhi lagta hai sab bekaar hai. Kabhi lagta hai <em>sab theek ho jayega</em>. Dono sach hain. Dono saath chalte hain.</p>
     <p class="whisper reveal">— chalo, shuru karte hain —</p>
   </section>
 
@@ -1169,23 +1298,23 @@
   <section class="container chapter" id="ch1" data-song="songs/chapter1.mp3" data-song-name="Shuruaat">
     <div class="chapter-num reveal">Chapter 01</div>
     <h2 class="reveal">Shuruaat</h2>
-    <p class="subtitle reveal">jahaan se sab kuch shuru hua</p>
+    <p class="subtitle reveal">jahaan se sab shuru hua</p>
   </section>
 
   <section class="container story">
-    <p class="reveal">Yahan apni kahani ka pehla hissa likho. Jaise — main kahan paida hua, bachpan kaisa tha, ghar kaisa tha, maa-baap kaise the.</p>
-    <p class="reveal">Yaad hai mujhe, <em>wo chhoti si gali</em>, wo peepal ka ped, aur wo sham ki chai ki khushbu. Bachpan mein lagta tha ye sab kabhi nahi badlega. Par badla — sab kuch badla.</p>
+    <p class="reveal">Gali chhoti thi — sirf 8 ghar the. Mod pe ek peepal ka ped tha, jiske neeche humne 3 cricket finals khoye the. Dopahar mein dhoop itni tez thi ki chhat ka cement pairon ko jalata tha.</p>
+    <p class="reveal">Par sham 5 baje ke baad, jab maa ki rasoi se chai ki khushbu aati thi — <em>woh mera favourite time tha</em>.</p>
     <p class="short reveal">Aur main bhi badla.</p>
-    <p class="reveal">Sach kahun toh shuruaat mein kuch khaas nahi tha. Ek aam sa bachcha, aam se sapne, aam si zindagi. Par jab peeche mudke dekhta hoon, toh wahi aam cheezein sabse khoobsurat lagti hain.</p>
+    <p class="reveal">Sach kahun toh bachpan mein kuch khaas nahi tha. Ek aam sa bachcha — aam se sapne, aam si zindagi. Par jab peeche mudke dekhta hoon, wahi aam cheezein sabse khoobsurat lagti hain.</p>
     <div class="story-figure reveal">
       <img src="pictures/tension no.jpeg" alt="Bachpan ki yaad">
-      <figcaption>Wahi gali, wahi ped — aaj bhi waisa hi hai</figcaption>
+      <figcaption>Gali ka mod — 2012 — woh aakhri din jab hum sab the</figcaption>
     </div>
     <p class="reveal">Maa kehti thi — <em>"beta, jo bhi ban, achha ban."</em> Tab samajh nahi aaya tha. Ab samajh aata hai.</p>
     <p class="dialogue reveal">"Bada hoke kya banega?"<br>— koi poochta tha.<br>"Pata nahi," main kehta tha. "Par kuch aisa, jo yaad rahe."</p>
-    <p class="reveal">Dopahar ki dhoop, aam ke ped, aur chhat pe leti hui sham — yeh sab yaadein aaj bhi aankhon ke saamne aa jaati hain. Jaise kal ki baat ho.</p>
+    <p class="reveal">Dopahar ki dhoop, aam ke ped, aur chhat pe leti hui sham — yeh sab aaj bhi aankhon ke saamne aa jaate hain. Jaise kal ki baat ho.</p>
     <div class="divider reveal">· · ·</div>
-    <p class="reveal">Bachpan mein ek baat samajh nahi aati thi — <em>ki waqt itni tezi se guzarta hai</em>. Lagta tha ye din kabhi khatam nahi honge. Par khatam ho gaye. Aur ab wahi din yaad aate hain, toh dil bhar aata hai.</p>
+    <p class="reveal">Bachpan mein ek baat samajh nahi aati thi — <em>ki waqt itni tezi se guzarta hai</em>. Lagta tha ye din kabhi khatam nahi honge. Par khatam ho gaye.</p>
     <p class="short reveal">Kuch cheezein wapas nahi aati.</p>
     <p class="reveal">Bas yaadein reh jaati hain. Aur yahi kahani unhi yaadon ki hai.</p>
   </section>
@@ -1203,17 +1332,17 @@
   </section>
 
   <section class="container story">
-    <p class="reveal">Gaon se shehar ka safar — wo pehli train, wo pehla akela din, wo pehli baar khud ka kamra. Sab kuch naya tha, sab kuch ajnabi.</p>
+    <p class="reveal">17 saal ki umar mein pehli baar train chadhi. Window seat mili. Bahar khet the, andar ghabrahat. Ghar se 800 km door ja raha tha — pehli baar akela.</p>
     <p class="dialogue reveal">"Tu akela hai? Ghar nahi yaad aata?"<br>— kisi ne poocha tha.<br>"Aata hai," maine kaha. "Par ruk nahi sakta."</p>
-    <p class="reveal">Shehar ne bahut kuch sikhaya. <em>Kaise ladna hai, kaise gir ke utna hai, kaise apne aap pe bharosa karna hai.</em> Kuch log mile jo aaj bhi saath hain. Kuch log chale gaye — unki yaadein reh gayi.</p>
+    <p class="reveal">Shehar ne bahut kuch sikhaya. <em>Kaise ladna hai, kaise gir ke uthna hai, kaise apne aap pe bharosa karna hai.</em> Kuch log mile jo aaj bhi saath hain. Kuch chale gaye — unki yaadein reh gayi.</p>
     <p class="short reveal">Har mod pe kuch naya mila.</p>
     <div class="divider reveal">· · ·</div>
     <p class="reveal">Din bhaari the, raatein lambi. Kabhi laga sab bekaar hai. Par subah phir se uthna — wahi asli himmat hai.</p>
     <div class="story-figure reveal">
       <img src="pictures/water.PNG" alt="Shehar ka pehla din">
-      <figcaption>Pehla din shehar mein — sab kuch naya</figcaption>
+      <figcaption>Pehli train — 17 saal — ghar se door</figcaption>
     </div>
-    <p class="reveal">Ek raat yaad hai — chhat pe akela baitha tha, neeche shehar ki roshni. Lagta tha <em>sab kuch itna bada hai, aur main itna chhota</em>. Par usi raat ek baat samajh aayi — chhota hone mein bhi ek taakat hai. Kyunki chhota insaan hi sabse zyada seekh sakta hai.</p>
+    <p class="reveal">Ek raat yaad hai — chhat pe akela baitha tha, neeche shehar ki roshni. Lagta tha <em>sab itna bada hai, aur main itna chhota</em>. Par usi raat samajh aaya — chhota hone mein bhi taakat hai. Kyunki chhota insaan hi sabse zyada seekh sakta hai.</p>
     <p class="whisper reveal">— aur main seekhta raha —</p>
   </section>
 
@@ -1225,33 +1354,34 @@
   </section>
 
   <section class="container story">
-    <p class="reveal">Har kahani mein ek aisa mod aata hai, jahan sab kuch tootne lagta hai. Mere saath bhi aaya.</p>
-    <p class="reveal">Kuch khaas nahi hua tha — bas zindagi ne apna kaam kiya. Log chale gaye, sapne toote, bharosa hil gaya. Aur main akela reh gaya — apne hi andheron ke saath.</p>
+    <p class="reveal">Har kahani mein ek aisa mod aata hai, jahan sab tootne lagta hai. Mera bhi aaya.</p>
+    <p class="reveal">Kuch khaas nahi hua tha — bas zindagi ne apna kaam kiya. Log chale gaye, sapne toote, bharosa hil gaya. Aur main akela reh gaya — apne andheron ke saath.</p>
     <p class="short reveal">Wahi sabse mushkil waqt tha.</p>
-    <p class="reveal">Raat bhar jaagta tha. Kuch sochta nahi tha, bas jaagta tha. Subah hote hi lagta tha — <em>aaj phir se wahi din</em>. Koi rasta nahi dikhta tha. Koi manzil nahi.</p>
+    <p class="reveal">Raat ke 3 baje tak chhat pe baitha tha. Phone silent tha. 47 messages dekhe the maine — koi reply nahi aaya. Subah hote hi lagta tha — <em>aaj phir wahi din</em>.</p>
     <p class="dialogue reveal">"Tum theek ho?"<br>— kisi ne poocha.<br>"Haan," maine kaha.<br>Jhooth bola tha.</p>
-    <p class="reveal">Par ek din — pata nahi kaise — main utha. Nahaya. Kapde pehne. Bahar nikla. Aur chai pee. Bas itna hi. Par us din kuch badla.</p>
+    <p class="reveal">Par ek din — pata nahi kaise — main utha. Nahaya. Kapde pehne. Bahar nikla. Tapri pe chai 10 rupaye ki thi. Haath kaanp rahe the. Par pehla ghoont liya — <em>aur pehli baar mehsoos hua ki zinda hoon</em>.</p>
     <div class="divider reveal">· · ·</div>
     <p class="reveal"><em>Tootna zaroori hai.</em> Kyunki jab sab kuch toot jaata hai, tab pata chalta hai — asli cheez kya thi. Jo bacha, wahi sach tha.</p>
   </section>
 
-  <!-- ===== CHAPTER 04 ===== -->
-  <section class="container chapter" id="ch4" data-song="songs/chapter4.mp3" data-song-name="Uthna">
+  <!-- ===== CHAPTER 04 — CONFUSION ===== -->
+  <section class="container chapter" id="confusion" data-song="songs/confusion.mp3" data-song-name="Confusion">
     <div class="chapter-num reveal">Chapter 04</div>
-    <h2 class="reveal">Uthna</h2>
-    <p class="subtitle reveal">phir se khade hone ki kahani</p>
+    <h2 class="reveal">Confusion</h2>
+    <p class="subtitle reveal">jab kuch samajh nahi aa raha tha</p>
   </section>
 
   <section class="container story">
-    <p class="reveal">Uthna aasan nahi tha. Par ek baar uth gaya, toh phir rukna nahi tha.</p>
-    <p class="reveal">Chhoti chhoti cheezein — ek acchi chai, ek purana gaana, ek dost ka message — inhi ne sahara diya. Bade sapne nahi, <em>chhote chhote lamhe</em>.</p>
-    <p class="short reveal">Aur wahi lamhe zindagi ban gaye.</p>
-    <div class="story-figure reveal">
-      <img src="pictures/sis.jpeg" alt="Naya safar">
-      <figcaption>Naya safar — wahi main, par thoda samajhdaar</figcaption>
-    </div>
-    <p class="reveal">Maine likhna shuru kiya. Pehle bas apne liye. Phir kisi ne padha, aur kaha — <em>"yeh toh meri bhi kahani hai"</em>. Tab samajh aaya, kahaniyan sirf apni nahi hoti. Sabki hoti hain.</p>
-    <p class="dialogue reveal">"Tum likhte ho?"<br>— kisi ne poocha.<br>"Haan," maine kaha. "Ab toh likhta hoon."</p>
+    <p class="reveal">Tootne ke baad ek aur cheez aayi — confusion. Sab bikhar gaya tha, par sabse bada sawaal yeh tha — <em>ab kya?</em></p>
+    <p class="reveal">Raat bhar jaagta tha, sochta tha. Kya karoon? Kahan jaoon? Kaun sa rasta sahi hai? Koi jawab nahi milta tha. Bas sawaal hi sawaal.</p>
+    <p class="short reveal">Sabse mushkil sawaal — "main kaun hoon?"</p>
+    <p class="reveal">Log kehte the — "tu strong hai, tu kar lega." Par andar se main toota hua tha. Bahar muskura deta tha, andar khaali tha.</p>
+    <p class="dialogue reveal">"Tu theek hai?"<br>— kisi ne poocha.<br>"Haan," maine kaha.<br>Par is baar khud ko bhi yakeen nahi tha.</p>
+    <div class="divider reveal">· · ·</div>
+    <p class="reveal">Ek din chhat pe baitha tha, chai haath mein. Neeche shehar ki roshni. Tab samajh aaya — <em>confusion bura nahi hota. Confusion matlab tu abhi bhi soch raha hai. Tu abhi bhi zinda hai.</em></p>
+    <p class="reveal">Jo log kabhi confused nahi hote, woh shayad kabhi kuch naya try hi nahi karte. Confusion ek signal hai — ki tum badal rahe ho.</p>
+    <p class="short reveal">Aur badalna zaroori hai.</p>
+    <p class="whisper reveal">— sawaal hi jawab tak le jaate hain —</p>
   </section>
 
   <!-- ===== Quote 2 ===== -->
@@ -1259,9 +1389,28 @@
     <p class="reveal">"Jo <span>girta</span> hai, wahi<br>uthna <span>seekhta</span> hai."</p>
   </section>
 
-  <!-- ===== CHAPTER 05 ===== -->
-  <section class="container chapter" id="ch5" data-song="songs/chapter5.mp3" data-song-name="Aaj">
+  <!-- ===== CHAPTER 05 — UTHNA ===== -->
+  <section class="container chapter" id="ch4" data-song="songs/chapter4.mp3" data-song-name="Uthna">
     <div class="chapter-num reveal">Chapter 05</div>
+    <h2 class="reveal">Uthna</h2>
+    <p class="subtitle reveal">phir se khade hone ki kahani</p>
+  </section>
+
+  <section class="container story">
+    <p class="reveal">Uthna aasan nahi tha. Par ek baar uth gaya, toh rukna nahi tha.</p>
+    <p class="reveal">Chhoti chhoti cheezein — ek acchi chai, ek purana gaana, ek dost ka message — inhi ne sahara diya. Bade sapne nahi, <em>chhote chhote lamhe</em>.</p>
+    <p class="short reveal">Aur wahi lamhe zindagi ban gaye.</p>
+    <div class="story-figure reveal">
+      <img src="pictures/sis.jpeg" alt="Naya safar">
+      <figcaption>Wahi main — par thoda samajhdaar</figcaption>
+    </div>
+    <p class="reveal">Maine likhna shuru kiya. Pehle bas apne liye. Phir kisi ne padha, aur kaha — <em>"yeh toh meri bhi kahani hai"</em>. Tab samajh aaya, kahaniyan sirf apni nahi hoti. Sabki hoti hain.</p>
+    <p class="dialogue reveal">"Tum likhte ho?"<br>— kisi ne poocha.<br>"Haan," maine kaha. "Ab toh likhta hoon."</p>
+  </section>
+
+  <!-- ===== CHAPTER 06 — AAJ ===== -->
+  <section class="container chapter" id="ch5" data-song="songs/chapter5.mp3" data-song-name="Aaj">
+    <div class="chapter-num reveal">Chapter 06</div>
     <h2 class="reveal">Aaj</h2>
     <p class="subtitle reveal">jahaan main ab hoon</p>
   </section>
@@ -1272,6 +1421,65 @@
     <p class="short reveal">Yeh kahani abhi khatam nahi hui.</p>
     <p class="reveal">Bas ek page palta hai. Baaki tum padhte raho — main likhta rahunga.</p>
     <p class="whisper reveal">— shukriya, padhne ke liye —</p>
+  </section>
+
+  <!-- ===== DEDICATION ===== -->
+  <section class="dedication" id="dedication">
+    <div class="dedication-inner">
+      <div class="dedication-label reveal">Kuch Khaas</div>
+
+      <div class="dedication-poem">
+
+        <!-- Sher 1 -->
+        <div class="sher reveal">
+          <p class="sher-line">Na tamanna hai sitaron ki,<br>na chahat hai nazaron ki.</p>
+          <p class="sher-meaning">Na mujhe sitaron ki tamanna hai, na nazaron ki chahat hai.</p>
+        </div>
+
+        <!-- Sher 2 -->
+        <div class="sher reveal">
+          <p class="sher-line">Jaan, tum jaise dost mile,<br>toh kya zarurat hai hazaron ki.</p>
+          <p class="sher-meaning">Agar tum jaise dost mil gaye, toh hazaron ki kya zarurat?</p>
+        </div>
+
+        <div class="dedication-divider reveal">· · ·</div>
+
+        <!-- Sher 3 -->
+        <div class="sher reveal">
+          <p class="sher-line">Bohot afzal ho tum —<br>tumhe nayaab likh doon,<br>yeh nazmein, ghazlein chhodo,<br>main tum pe kitaab likh doon.</p>
+          <p class="sher-meaning">Tum bohot afzal ho — tumhe nayaab likh doon. Yeh nazmein aur ghazlein chhod do, main toh tum pe ek poori kitaab likh doon.</p>
+        </div>
+
+        <div class="dedication-divider reveal">· · ·</div>
+
+        <!-- Sher 4 -->
+        <div class="sher reveal">
+          <p class="sher-line sher-highlight">Tum chand ki baat karte ho,<br>hum chand se baat karte hain <span>✨🌙</span></p>
+          <p class="sher-meaning">Tum chand ki tareef karte ho — hum toh chand se hi baat karte hain.</p>
+        </div>
+
+        <!-- Sher 5 -->
+        <div class="sher reveal">
+          <p class="sher-line sher-last">Koi kitna bhi khoobsurat ho —<br>tera jaisa toh nahi ho sakta <span>🥀❤️</span></p>
+          <p class="sher-meaning">Koi bhi kitna bhi khoobsurat ho, tumhare jaisa toh koi nahi ho sakta.</p>
+        </div>
+
+        <div class="dedication-divider reveal">· · ·</div>
+
+        <!-- Ending -->
+        <div class="sher reveal">
+          <p class="sher-line sher-ending">Na sitaron ki tamanna rahi,<br>na nazaron ki chahat rahi.<br>Jab tum mile — toh sab kuch mil gaya.</p>
+          <p class="sher-meaning">Ab na sitaron ki tamanna rahi, na nazaron ki chahat. Jab tum mile, toh sab kuch mil gaya.</p>
+        </div>
+
+        <!-- Signature -->
+        <div class="dedication-signature reveal">
+          <span class="signature-line"></span>
+          <p>— Umar</p>
+        </div>
+
+      </div>
+    </div>
   </section>
 
   <!-- ===== GALLERY ===== -->
@@ -1357,12 +1565,11 @@
   }, { passive: true });
 
   // ============================================================
-  // ===== SMOOTH SCROLL (nav offset fix using real height) =====
+  // ===== SMOOTH SCROLL =====
   // ============================================================
   function smoothScrollTo(target) {
     const el = document.querySelector(target);
     if (!el) return;
-    // Use real rendered nav height instead of parsing CSS var
     const navH = document.getElementById('nav').offsetHeight || 72;
     const top = el.getBoundingClientRect().top + window.pageYOffset - navH - 10;
     window.scrollTo({ top, behavior: 'smooth' });
